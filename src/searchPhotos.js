@@ -1,6 +1,9 @@
 import React, { useState } from 'react'
 // import Unsplash, { toJson } from "unsplash-js";
 import { createApi } from 'unsplash-js';
+import { LightgalleryItem } from "react-lightgallery";
+
+
 
 
 export default function SearchPhotos() {
@@ -84,13 +87,15 @@ export default function SearchPhotos() {
                 {
                     pics.map((pic) =>
                         <div className="card" key={pic.id}>
+                            <LightgalleryItem group="any" src={pic.urls.full}>
                             <img
                                 className="card--image"
                                 alt={pic.alt_description}
                                 src={pic.urls.full}
-                                width="50%"
-                                height="50%"
+                                 width="100%"
+
                             ></img>
+                             </LightgalleryItem>
                         </div>)
                 }
             </div>
